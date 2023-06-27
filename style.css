@@ -1,0 +1,62 @@
+:root{
+  --background-dark: #292C35;
+  --background-light: #f1f1f1;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: var(--background-light);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.switch{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.switch .switch-wrapper{
+  display: inline-block;
+  width: 235px;
+  height: 102px;
+  position: relative;
+}
+.switch .switch-wrapper .switch-button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 59px;
+  background-color: #000;
+}
+
+.switch .switch-wrapper .switch-button::before{
+  content: '';
+  width: 86px;
+  height: 86px;
+  position: absolute;
+  left: 6px;
+  bottom: 8px;
+  border-radius: 50%;
+  transition: .4s all ease;
+  background-color: #f1f1f1;
+}
+.switch .switch-wrapper input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switch .switch-wrapper input:checked + .switch-button::before{
+  transform:  translateX(136px);
+}
